@@ -12,7 +12,7 @@ def _row_to_dict(row):
     return {"id": row[0], "owner": row[1], "title": row[2], "body": row[3]}
 
 
-def create_note(owner: str, title: str, body: str, db_path: str = DB_PATH) -> int:
+def create_note(title: str, owner: str, body: str, db_path: str = DB_PATH) -> int:
     """Insert a note and return its new id."""
     with get_connection(db_path) as conn:
         cur = conn.execute(
